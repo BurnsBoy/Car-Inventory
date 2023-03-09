@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <title>Cars 'R' Us</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h2 class="nav-title">Cars 'R' Us</h2>
+            <div class="navbar-list">
+                <ul>
+                    <li class="nav-item">
+                        <a class="nav-button" href="{{ url_for('site.home') }}">Home</a>
+                    </li>
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-button" href="{{ url_for('site.profile') }}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-button" href="{{ url_for('auth.logout') }}">Log Out</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-button" href="{{ url_for('auth.signin') }}">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-button" href="{{ url_for('auth.signup') }}">Sign Up</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% block content %} 
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,22 @@
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {% if signup %}
+    <div class="input-box">
+        {{ form.first_name.label(class = 'form-label') }}
+        {{ form.first_name(class = 'form-field', placeholder = 'first name...') }}
+    </div>
+    <div class="input-box">
+        {{ form.last_name.label(class = 'form-label') }}
+        {{ form.last_name(class = 'form-field', placeholder = 'last name...') }}
+    </div>    
+    {% endif %}
+    <div class="input-box">
+        {{ form.email.label(class = 'form-label') }}
+        {{ form.email(class = 'form-field', placeholder = 'email address...') }}
+    </div>
+    <div class="input-box">
+        {{ form.password.label(class = 'form-label') }}
+        {{ form.password(class = 'form-field', placeholder = 'password...') }}
+    </div>
+    {{ form.submit_button(class = 'btn') }}
+</form>

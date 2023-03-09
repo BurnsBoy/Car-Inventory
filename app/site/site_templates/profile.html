@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+<section>
+    <h1 class="welcome-message">Welcome, {{ current_user.first_name }}</h1>
+</section>
+<section>
+    <div class="profile">
+        <h4>Email: {{ current_user.email }} </h4>
+        <h4>Token: {{ current_user.token }} </h4> 
+    </ul>
+    </div>
+    <img class="bg" src="../static/images/Car.jpg" alt="white car">
+</section>
+{% endblock %}

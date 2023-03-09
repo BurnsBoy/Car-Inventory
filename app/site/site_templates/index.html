@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+    <h1>Your Car Inventory, Reimagined</h1>
+    <img class="bg" src="../static/images/Cars-In-Parking-Lot.jpg" alt="parking lot with cars">
+    {% if current_user.is_authenticated %}
+    <h3 class="main-header">View your <a href="{{ url_for('site.profile') }}">"Profile"</a> or <a href="{{ url_for('auth.logout') }}">"Log Out"</a></h3>
+    {% else %}
+    <h3 class="main-header"><a href="{{ url_for('auth.signin') }}">"Sign In"</a> or <a href="{{ url_for('auth.signup') }}">"Sign Up"</a> to begin!</h3>
+    {% endif %}
+</section>
+{% endblock %}
